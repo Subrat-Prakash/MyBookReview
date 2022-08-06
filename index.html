@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SahuCreationOriginal</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+        background-position-x: center;
+    }
+    body{
+        font-family: monserrat; 
+        /* padding-left:15%; */
+        /* padding-right: 15%;  */
+        background-color: #f8f8fd;
+    }
+    nav{
+        background: rgba(166, 57, 159, 0);
+        height: 75px;
+        width: 100% ;
+        scroll-behavior:auto;
+        background-color: white;
+    }
+    label.logo{
+        color: rgba(147, 5, 131, 0.775);
+        font-size: 35px;
+        font-style: oblique;
+        line-height: 70px;
+        font-weight: bold;
+        padding-left: 10%;
+    }
+    nav ul{
+        float: right;
+        margin-right: 20px;
+    }
+    nav ul li{
+        display: inline-block;
+        line-height: 70px;
+        margin: 0 0px;
+    }
+    nav ul li a{
+        color: rgb(0, 0, 0);
+        padding: 7px 13px;
+        border-radius: 3px;
+        text-transform: uppercase;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 20px;
+    }
+    nav ul li a:hover{
+        color: rgb(255, 255, 255);
+        background-color: rgb(179, 33, 202);
+    }
+    #first-item{
+        background: #f9baff00;
+        transition: .5s;
+    }
+    .checkbtn{
+        font-size: 30px;
+        float: right;
+        color: rgb(143, 34, 34);
+        line-height: 70px;
+        margin-right: 40px;
+        cursor: pointer;
+        display: none;
+    }
+    #check{
+        display: none;
+
+    }
+    @media (max-width: 952px){
+        label.logo{
+            font-size: 30px;
+            padding-inline-start: 50px;
+        }
+        nav ul li a{
+            font-size: 16px;
+        }
+    }
+    @media (max-width: 900px){
+        .checkbtn{
+            display:block;
+        }
+        ul{
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: rgb(255, 255, 255);
+            top: 75px;
+            left: -100%;
+            text-align: center;
+            transition: all .5s;
+            padding: 15%;
+        }
+        nav ul li{
+            display: block;
+            margin: 50px 0;
+            line-height: 20px;
+        }
+        nav ul li a{
+            font-size: none;
+        }
+        a:hover, a.active{
+            background: none;
+            color: rgb(91, 39, 187);
+        }
+        #check:checked ~ ul{
+            left: 0;
+        }
+    }
+    #para{
+        padding-left: 15%;
+        padding-right: 15%;
+            
+    }
+    h1{
+        text-align: center;
+        color: rgb(234, 127, 255);
+        padding-top: 5%;
+    }
+    .slider{
+        height: 250px;
+        margin: auto;
+        position: relative;
+        width: 100%;
+        display: grid;
+        place-items: center;
+    }
+    .slider-track{
+        display: flex;
+        width: calc(200px * 7);
+        animation: scroll 10s linear infinite;
+    }
+    .slider-track:hover{
+        animation-play-state:paused;
+    }
+    @keyframes scroll {
+        0%{
+            transform: translateX(calc(120PX * 0.2));
+        }
+        50%{
+            transform: translateX(calc(-120px * 3));
+        }
+    }
+    .slide{
+        height: 200px;
+        width: 250px;
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        perspective: 100px;
+    }
+    img{
+        width: 100%;
+    }
+    img:hover{
+        transform: translateZ(25px);
+    }
+    img{
+       width: 100%;
+        transition: transform 0.4s;
+    } 
+    /* image shadow */
+    .slider::before,
+    .slider::after{
+        background: linear-gardient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+        content: '';
+        height: 100%;
+        position: absolute;
+        width: 15%;
+        z-index: 2;
+    }
+    .slider::before{
+        left: 0;
+        top: 0;
+    }
+    .slider::after{
+        right: 0;
+        top: 0;
+        transform: rotateY(180deg);
+    }
+    @media(max-width:1000px){
+        .slider-track{
+        display: flex;
+        width: calc(200px * 1 );
+        animation: scroll 10s linear infinite;
+    }
+             
+    } 
+
+    
+    /* This is book category */
+    .book-type{
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-areas: "cir-1 cir-2 cir-3 cir-4 cir-5 cir-6 cir-7 cir-8";
+        place-content: center center;
+        text-align: center;
+        /* gap: 30px; */
+        /* padding:40px; */
+        font-size: 50px;      
+    }
+    .book-category{
+        text-align: center;
+        /* padding-top: 20px; */
+        font-size:20px;
+        color: rgb(234, 6, 255);
+        font-style:normal;                           
+
+    }
+    #cir-1, #cir-2, #cir-3, #cir-4, #cir-5, #cir-6, #cir-7, #cir-8{
+        padding-top: 70px;
+        padding-right: 70px;
+        color: rgb(4, 0, 255);
+        height: 100%;
+        width: 100%;             
+    }
+    a{
+        color: #143836;
+        font-size: small;
+        
+    }
+    .photo-1{
+        border-radius: 50%;
+        max-width: 65%;      
+        
+    }
+
+    @media(max-width:1000px){
+        .book-type{
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-areas: "cir-1 cir-2 cir-3";
+        place-content: center center;
+        text-align: center;
+        font-size: 50px;      
+    }
+    .book-category{
+        text-align: center;
+        /* padding-top: 20px; */
+        font-size:20px;
+        color: rgb(234, 6, 255);
+        font-style:normal;                           
+
+    }
+    #cir-1, #cir-2, #cir-3, #cir-4, #cir-5, #cir-6,#cir-7,#cir-8{
+        /* padding-top: 70px; */
+        padding: 25px 30px;
+        color: rgb(4, 0, 255);
+        height: 100%;
+        width: 100%;             
+    }
+    a{
+        color: #143836;
+        font-size: small;
+        
+    }
+    .photo-1{
+        border-radius: 50%;
+        max-width: 65%;      
+        
+    }
+    }
+    h4:hover{
+        color: red;
+    }   
+    /* search icon ke liye */
+    #sercha{
+        padding: 0px 60px;        
+    }
+    #sercha:hover{
+        color: rgba(218, 6, 246, 0.986);
+        cursor: pointer;
+    }
+
+</style>
+<body>
+    <nav id="header-container">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        
+        <label class="logo">ReviewBook</label>
+
+        <ul id="navbar">
+            <div id="first-item">
+                <span id="sercha" class="material-symbols-outlined">
+                    search
+                    </span>               
+                <li><a class="active" href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="login.html">LogIn/SignUp</a></li>
+            </div> 
+        </ul>
+        
+    </nav>
+    <section class="slide-photo">
+        <h1>Trending Books</h1>
+        <div class="slider">
+            <div class="slider-track">
+            <!-- sliding photos  -->                
+                <div class="slide" id="s1"><a href="http://www.google.com"><img src="https://images.cdn.kukufm.com/w:350/f:webp/q:100/https://s3.ap-south-1.amazonaws.com/kukufm/cu_icons/31dc5ae4a58c42f998ced6412c6b062f.png"></a></div>
+                <div class="slide" id="s2"> <a href="http://www.youtube.com"><img src="https://images.cdn.kukufm.com/w:350/f:webp/q:100/https://s3.ap-south-1.amazonaws.com/kukufm/cu_icons/28f111cecf9541cba96706687f16bbd6.png"></a></div>
+                <div class="slide" id="s3"> <a href="http://www.google.com"><img src="https://images.cdn.kukufm.com/w:350/f:webp/q:100/https://s3.ap-south-1.amazonaws.com/kukufm/cu_icons/dc70011d605f47f7823edea19fb91e85.png"></a></div>
+                <div class="slide" id="s4"> <a href="http://www.google.com"><img src="https://images.cdn.kukufm.com/w:350/f:webp/q:100/https://s3.ap-south-1.amazonaws.com/kukufm/cu_icons/55fd17366fbd4d599ce5e474b2314ae6.png"></a></div>
+                <div class="slide" id="s5"> <a href="http://www.google.com"><img src="https://images.cdn.kukufm.com/w:350/f:webp/q:100/https://s3.ap-south-1.amazonaws.com/kukufm/cu_icons/31dc5ae4a58c42f998ced6412c6b062f.png"></a></div>
+                <div class="slide" id="s6"> <a href="http://www.google.com"><img src="https://images.cdn.kukufm.com/w:350/f:webp/q:100/https://s3.ap-south-1.amazonaws.com/kukufm/cu_icons/31dc5ae4a58c42f998ced6412c6b062f.png"></a></div>
+                <div class="slide" id="s7"> <a href="http://www.google.com"><img src="https://images.cdn.kukufm.com/w:350/f:webp/q:100/https://s3.ap-south-1.amazonaws.com/kukufm/cu_icons/31dc5ae4a58c42f998ced6412c6b062f.png"></a></div>
+                <div class="slide" id="s8"> <a href="http://www.google.com"><img src="https://images.cdn.kukufm.com/w:350/f:webp/q:100/https://s3.ap-south-1.amazonaws.com/kukufm/cu_icons/31dc5ae4a58c42f998ced6412c6b062f.png"></a></div>
+                <div class="slide" id="s9"> <a href="http://www.google.com"><img src="https://images.cdn.kukufm.com/w:350/f:webp/q:100/https://s3.ap-south-1.amazonaws.com/kukufm/cu_icons/31dc5ae4a58c42f998ced6412c6b062f.png"></a></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Another div for category of a book -->
+
+    <section class="book-category">
+        <h2>Book Summary</h2>
+        <div class="book-type">
+            <div id="cir-1">
+                <a href="#"><img class="photo-1" src="https://kukufm.akamaized.net/category_icons/icon_motivation.svg" alt="">
+                    <h4>Motivation</h4>
+                </a>
+            </div>
+            <div id="cir-2">
+                <a href="#"><img class="photo-1" src="https://kukufm.akamaized.net/category_icons/icon_biography_v1.svg" alt="">
+                    <h4>Biography</h4>
+                </a>
+            </div>
+            <div id="cir-3">
+                <a href="#"><img class="photo-1" src="https://kukufm.akamaized.net/category_icons/icon_horror.svg" alt="">
+                    <h4>Horrorbook</h4>
+                </a>
+            </div>
+            <!-- <div id="cir-4">
+                <a href="#"><img class="photo-1" src="https://kukufm.akamaized.net/category_icons/icon_love.svg"alt="">                    
+                    <h4>Love Show</h4>
+                </a>
+            </div> -->
+            <div id="cir-5">
+                <a href="#"><img class="photo-1" src="https://kukufm.akamaized.net/category_icons/icon_self_help.svg" alt="">
+                    <h4>Self Helps</h4>
+                </a>               
+            </div>       
+            <div id="cir-6">
+                    <a href="#"><img class="photo-1" src="https://kukufm.akamaized.net/category_icons/icon_horror.svg" alt="">
+                        <h4>Free Shows</h4>
+                    </a>
+            </div>            
+            <div id="cir-7">
+                <a href="#"><img class="photo-1" src="https://kukufm.akamaized.net/category_icons/icon_top_10.svg" alt="">
+                    <h4>Top-10 Book</h4>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h3 style="color: rgb(251, 136, 255); font-size: 180%; text-align: center;padding: 2%;"  >About Us</h3>
+        <p style="text-align:center;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Non cupiditate accusantium nesciunt, sequi odit nihil ipsam quo iusto culpa porro delectus illo, maiores reiciendis assumenda esse illum totam repellendus praesentium magnam. Quas fugiat dolorum rerum architecto. Laudantium accusamus quibusdam quia praesentium, laboriosam non tenetur voluptatum necessitatibus eum harum eos, deserunt officia nobis perspiciatis assumenda totam provident! Beatae natus sapiente dolores consequuntur nesciunt modi laudantium neque assumenda, quam porro deleniti asperiores, mollitia velit inventore optio aperiam iure unde eaque quidem quo. Maiores ex aliquid odit suscipit voluptas, atque vel ipsum facere repellendus recusandae soluta distinctio, corporis ad, accusamus illum quasi quia impedit vitae tempora quisquam minima! Doloribus, accusantium. Corporis, nostrum placeat, vel iste corrupti asperiores atque laboriosam voluptatum voluptas, iure impedit officia unde labore fugit. Asperiores, odio voluptates. Sunt velit minima pariatur libero unde, doloribus cum quod labore facere, architecto mollitia ipsum quo,sandae, neque quam sint inventore delectus temporibus est? Alias repudiandae, exercitationem at fuga id, nam nostrum officia corporis minima quae accusantium quos obcaecati ut, repellat velit? Recusandae ab dolorem officiis, pariatur consequuntur quo a molestias nam nemo nisi nobis distinctio! Eius dicta recusandae, omnis ut libero perspiciatis natus impedit placeat ducimus maxime voluptas eos! Nesciunt, quis aspernatur expedita sit eligendi voluptatem necessitatibus dignissimos sequi repellendus quaerat ut cupiditate impedit commodi accusantium repellat molestiae labore, doloremque debitis quo aliquid sint pariatur libero beatae. Corporis veritatis tenetur amet est eaque. Hic laboriosam sapiente cum! Modi optio placeat voluptatem nostrum molestias maxime numquam nesciunt porro, doloremque, quas expedita natus quidem perferendis voluptas accusantium nemo consequatur. Eos rerum officiis sapiente ipsa nostrum porro earum nemo maxime accusantium similique a fugit voluptatem id voluptate deserunt inventore quam reiciendis animi vel pariatur, molestias fuga nobis expedita! Aliquid officia expedita, nemo error fuga veniam porro laudantium, totam impedit molestiae voluptatem beatae soluta ea. Velit inventore eligendi, at ducimus ratione, recusandae nihil eveniet iure earum ut fugiat odio excepturi, ex qui! Eaque odit, ratione eos officia veritatis enim, minus nam voluptate error esse possimus praesentium atque officiis odio id non illum nobis eligendi quae sapiente magnam soluta repellendus aspernatur. Cumque labore voluptatum, obcaecati quisquam blanditiis ipsa aliquam minima beatae quo cupiditate quam aut placeat nobis incidunt molestiae officia eveniet in voluptate maiores? Enim quod cumque inventore maxime vero numquam quos error! Aut fugit dignissimos necessitatibus! Earum perferendis rerum a, ea quos eos repellendus quod alias aperiam quo dolor sed magni vel harum inventore autem praesentium iure quae facere molestiae, nostrum delectus provident eaque. Dicta similique illo beatae a modi, pariatur impedit magnam aperiam ea laborum eaque! Aperiam possimus atque dolor non, provident quaerat deleniti sit praesentium minus porro dolores ea nam quod quasi placeat est cupiditate iste perspiciatis, repellendus aliquam a? Nostrum suscipit magnam eaque nisi quidem reiciendis aperiam. Amet cum rem assumenda praesentium beatae. Cumque aspernatur asperiores velit atque debitis ut ipsum odio autem. Sunt enim pariatur officiis fuga id ad, sed dolor tenetur omnis itaque, et alias, deleniti minima quia ducimus eos! Reprehenderit id perspiciatis, officia, natus doloremque quod temporibus non est tempora iusto exercitationem minus quaerat quae corporis quidem culpa qui saepe consequatur vero. A voluptatem recusandae debitis dolor, suscipit ipsam ratione tempora velit, doloremque distinctio maxime, odit veritatis vel aspernatur ex. Asperiores doloribus  corporis repudiandae hic ad aspernatur. Voluptatem sapiente accusantium earum veritatis laborum suscipit, dolorum modi sequi illo autem ad, sunt optio eligendi. Itaque, nesciunt inventore, nam voluptatem ratione quam aliquid quas ab magnam nisi commodi provident maiores alias delectus accusantium explicabo dolores dignissimos velit! Ipsa accusantium sit quisquam tempore unde quam quis aperiam est magnam ratione sapiente, ad quaerat eum explicabo laborum debitis beatae officia facilis amet? Animi dolorum hic cumque ullam maxime voluptas consequuntur. Deserunt architecto, alias cum eos ducimus hic eveniet pariatur consequatur quos. Quae aut minima, sapiente quia quidem corrupti possimus tempora dolores, quas voluptate repudiandae aspernatur odio libero doloribus distinctio. Excepturi nostrum sit aliquid! Distinctio, eveniet doloremque rem aperiam voluptas, ipsum omnis doloribus nihil qui vitae quam! Maxime, error quo similique porro nostrum possimus minima ex eum quisquam, assumenda obcaecati totam aspernatur culpa iste harum eligendi. Consequatur temporibus tempore voluptatem, voluptates numquam nostrum non commodi quasi laborum sapiente doloremque quod beatae velit porro voluptas reprehenderit nobis esse odio odit animi nihil! Quis molestias pariatur veniam corporis sint ipsa dolorum facere asperiores quod expedita voluptas accusantium eveniet sequi, unde iusto earum laboriosam dignissimos doloribus officia voluptatibus quas, deleniti natus ad eligendi. Culpa praesentium, soluta ipsam expedita veniam dolorum accusamus fuga eos tempora repudiandae numquam, dolores at placeat quas, veritatis iste obcaecati cumque et natus nemo doloremque. Ipsa, porro dolores, dolore illum maiores aliquam veritatis blanditiis omnis possimus vitae magnam a quod obcaecati nostrum suscipit. Iure odio in assumenda voluptas labore maiores iusto tempore cupiditate animi laboriosam dolorum necessitatibus quisquam est magni voluptatum exercitationem quam, voluptate velit beatae reprehenderit ducimus dolorem suscipit possimus. Amet unde, saepe modi, temporibus aliquam qui, ratione nisi doloremque ipsum atque iusto maxime illo nam corrupti voluptates animi accusantium totam? Sed at perspiciatis consectetur fugiat ullam corrupti exercitationem, nihil deleniti incidunt sequi vitae totam voluptatibus aliquam placeat culpa est porro quo ipsum. Tenetur quis soluta dolor beatae officiis assumenda dicta. Aspernatur, asperiores placeat quaerat soluta sed sunt tenetur, alias aperiam unde reiciendis magni veniam voluptatibus suscipit molestiae velit, iure natus? Temporibus excepturi commodi soluta ratione quae quibusdam consectetur perferendis, atque reiciendis maxime labore optio impedit obcaecati est voluptatum ea illo autem. Unde quam eveniet quod excepturi iste exercitationem aliquam distinctio consequatur quidem facere, hic alias consequuntur nam laborum, vero quia iusto voluptatibus tempora dolorem minus numquam amet. Eius doloribus natus ad perspiciatis, praesentium commodi voluptatum pariatur sunt autem ducimus nobis quisquam quasi consequatur et repellat cupiditate consequuntur inventore dolor repudiandae? Voluptate alias deserunt libero dignissimos debitis odit reiciendis nesciunt autem eligendi. At odio reprehenderit veritatis non quod minima, nam in que dolore neque ipsum dicta cupiditate perferendis amet? Nulla ipsa harum eum beatae eius suscipit enim, totam omnis reprehenderit, velit eos libero veritatis eaque iusto. Accusamus, expedita. Odit, quibusdam minus? Facere harum ipsam quae cupiditate dolorum, reiciendis ullam quaerat tenetur tempora consequatur, um et reprehenderit officiis saepe 
+        </p>
+    </section>
+</body>
+</html>
